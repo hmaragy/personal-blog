@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "posts",
+  "info": {
+    "name": "post",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "content": {
+      "type": "richtext",
+      "required": true,
+      "minLength": 100,
+      "maxLength": 10000
+    },
+    "author": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "categories": {
+      "collection": "categories",
+      "via": "posts",
+      "dominant": true
+    }
+  }
+}
