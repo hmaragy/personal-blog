@@ -1,6 +1,6 @@
 <h1>Personal Blog</h1>
 <p>This is a basic personal blog website that allows users to create, edit and delete posts.</p>
-
+<p>Click on this link to view the blog: <a href="http://personal-blog-hmaragy.vercel.app/">http://personal-blog-hmaragy.vercel.app/</a>
 <h2>Technologies used:</h2>
 <ul>
   <li>Next.js</li>
