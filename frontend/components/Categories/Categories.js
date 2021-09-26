@@ -4,7 +4,7 @@ import Link from "next/link";
 const Categories = props => {
   return (
     <SBadgeContainer className={props.className}>
-      Categories:{" "}
+      {props.categories?.length > 0 && <span>Categories: </span>}
       {props.categories &&
         props.categories.map(c => (
           <Link key={c.id} href={"/categories/" + c.slug}>

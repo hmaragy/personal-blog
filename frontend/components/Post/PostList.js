@@ -27,7 +27,12 @@ const PostList = props => {
           </p>
         }
       >
-        {props.children}
+        {props.children?.length > 0 && "Sorry There's no Posts at moment"}
+        {props.children?.length <= 0 && (
+          <p style={{ width: "100%", height: "300px", textAlign: "center", padding: "2rem 0", margin: "auto" }}>
+            Sorry There's no Posts at moment
+          </p>
+        )}
       </InfiniteScroll>
     </>
   );

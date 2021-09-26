@@ -22,7 +22,7 @@ const Home = ({ posts, categories, e }) => {
       const postsCount = await axios.get(process.env.API_URL + "/posts/count");
       let end = postsCount.data;
 
-      if (startPagination == end) {
+      if (startPagination >= end) {
         setHasMorePosts(false);
         return null;
       }
