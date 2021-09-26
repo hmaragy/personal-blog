@@ -32,9 +32,26 @@
       "model": "user"
     },
     "categories": {
-      "collection": "categories",
       "via": "posts",
+      "collection": "categories",
       "dominant": true
+    },
+    "banner": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "description": {
+      "type": "string",
+      "required": true,
+      "maxLength": 150,
+      "minLength": 30,
+      "unique": false
     }
   }
 }
