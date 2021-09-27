@@ -10,11 +10,13 @@ const Home = ({ posts, categories, e }) => {
   const [hasMorePosts, setHasMorePosts] = useState(true);
   const [error, setError] = useState(e);
   useEffect(() => {
-    setPostElements(
-      posts.map(post => {
-        return <PostPreview key={post.id} post={post}></PostPreview>;
-      })
-    );
+    if (posts && posts.length) {
+      setPostElements(
+        posts.map(post => {
+          return <PostPreview key={post.id} post={post}></PostPreview>;
+        })
+      );
+    }
   }, []);
 
   async function fetchData() {
