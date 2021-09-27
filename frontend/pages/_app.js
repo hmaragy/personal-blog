@@ -2,6 +2,7 @@ import { ThemeProvider } from "@emotion/react";
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
 import GlobalStyles from "../styles/globals";
+import NextNprogress from "nextjs-progressbar";
 
 const theme = {
   breakPoints: {
@@ -22,6 +23,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <ThemeProvider theme={theme}>
         <GlobalStyles />
+        <NextNprogress color="#FEF8F7" startPosition={0.3} stopDelayMs={200} height={5} showOnShallow={true} />
         <Header />
         <Component {...pageProps} />
         <Footer />
