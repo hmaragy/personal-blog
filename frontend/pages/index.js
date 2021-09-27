@@ -59,7 +59,7 @@ export const getServerSideProps = async ctx => {
   try {
     const posts = await axios.get(process.env.API_URL + "/posts?_start=0&_limit=2");
     const categories = await axios.get(process.env.API_URL + "/categories");
-    return { props: { posts: posts.data, categories: categories.data } };
+    return { props: { posts: posts.data || [], categories: categories.data || [] } };
   } catch (error) {
     return { props: { error } };
   }

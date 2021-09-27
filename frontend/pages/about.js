@@ -6,7 +6,11 @@ import { useState } from "react";
 const About = ({ post, e }) => {
   const [error, setError] = useState(e);
 
+  if (!post) {
+    return <div style={{ height: "calc(100vh - 200px)" }}>Sorry, this page is not available at the moment</div>;
+  }
   const { banner, content, title } = post;
+
   return (
     <>
       <div>{error}</div>
@@ -50,7 +54,7 @@ const STextBox = styled.div`
 export const getServerSideProps = async ctx => {
   try {
     const posts = await axios.get(process.env.API_URL + "/pages?name=about");
-    return { props: { post: posts.data[0] } };
+    return { props: { post: posts.data.length ? posts.data[0] : null } };
   } catch (error) {
     return { props: { error } };
   }
